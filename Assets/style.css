@@ -1,4 +1,4 @@
-body:after {
+/* body:after {
     content: " ";
     position: fixed;
     inset: 0;
@@ -8,22 +8,18 @@ body:after {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
-    animation: fadeOut 1s;
-    animation-fill-mode: forwards;
-    -webkit-transition: fadeOut 1s;
-    transition: fadeOut 1s;
+    animation: fadeOut 1s forwards;
     pointer-events: none;
 }
 
 @keyframes fadeOut {
-    50% {
+    from {
         opacity: 1;
     }
-
-    100% {
+    to {
         opacity: 0;
     }
-}
+} */
 
 /* body {
     background: url(images/background.webp)
@@ -73,6 +69,10 @@ body .Crychic-typo {
 body .Crychic-typo img {
     border-radius: 5px;
     max-width: 100%;
+}
+
+#Post .t-card__title {
+    font-size: 20px;
 }
 
 footer {

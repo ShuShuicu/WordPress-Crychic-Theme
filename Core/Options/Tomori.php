@@ -36,7 +36,7 @@ if (!defined('ABSPATH')) exit;
     </table>
     <el-button type="primary" native-type="submit" name="submit" id="submit" style="float: right;">保存设置</el-button>
 </el-tab-pane>
-<el-tab-pane label="文章">
+<el-tab-pane label="页面">
 <el-skeleton :rows="5" animated />
 </el-tab-pane>
 <el-tab-pane label="优化">

@@ -1,6 +1,6 @@
 # WordPress Crychic Theme
-> 使用Vue3 + Element Plus + Vuetify构建的一款WordPress主题。
+> 使用Vue3构建的一款WordPress主题。
 
-当前开发进度为十分之三！
+当前开发进度为百分之30！
 
-注意，该版本为开发版，完整版需等待一段时间！
+注意，该版本为开发版，git仓库都是随手push 正式版需等待一段时间！

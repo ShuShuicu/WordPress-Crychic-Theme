@@ -22,11 +22,10 @@ class Crychic
     // 获取Title
     public function Title($echo = true)
     {
+        $site_name = Crychic::Info("name",false);
+        $site_description = Crychic::Info("description",false);
         if (is_front_page()) {
             // 首页标题
-            $site_name = Crychic::Info("name",false);
-            $site_description = Crychic::Info("description",false);
-
             if (!empty($site_description)) {
                 $title = $site_name . " - " . $site_description;
             } else {
@@ -35,12 +34,10 @@ class Crychic
         } elseif (is_category()) {
             // 分类页面标题
             $category_name = single_cat_title("", false);
-            $site_name = Crychic::Info("name",false);
             $title = $category_name . " - " . $site_name;
         } elseif (is_tag()) {
             // 标签页面标题
             $tag_name = single_tag_title("", false);
-            $site_name = Crychic::Info("name",false);
             $title = $tag_name . " - " . $site_name;
         } elseif(is_404()) {
         // 404页面标题
@@ -48,12 +45,10 @@ class Crychic
         } elseif (is_author()) {
             // 作者页面标题
             $author_name = get_the_author();
-            $site_name = Crychic::Info("name",false);
             $title = $author_name . " - " . $site_name;
         } else {
             // 内页标题
             $page_title = get_the_title();
-            $site_name = Crychic::Info("name",false);
             $title = $page_title . " - " . $site_name;
         }
 
@@ -130,16 +125,27 @@ class Crychic
         }
     }
 
+    // 引用Core文件
+    public static function Core($file)
+    {
+        require_once get_theme_file_path() . "/Core/" . $file . ".php";
+    }
+
     // 引用Src文件
     public static function Src($file)
     {
         require_once get_theme_file_path() . "/Src/" . $file . ".php";
     }
 
-    // 引用Core文件
-    public static function Core($file)
+    // 引用Src/Template文件
+    public static function Template($file)
     {
-        require_once get_theme_file_path() . "/Core/" . $file . ".php";
+        require_once get_theme_file_path() . "/Src/Template/" . $file . ".php";
+    }
+    // 引用Src/Template/Components文件
+    public static function Components($file)
+    {
+        require_once get_theme_file_path() . "/Src/Template/Components/" . $file . ".php";
     }
 
     // 入口规则
@@ -147,13 +153,13 @@ class Crychic
     {
         Crychic::Src("Header");
         if (is_front_page()) {
-            Crychic::Src("Template/Index");
+            Crychic::Template("Index");
         } elseif (is_single()) {
-            Crychic::Src("Template/Single");
+            Crychic::Template("Single");
         } elseif(is_404()) {
-            Crychic::Src("Template/Error");
+            Crychic::Template("Error");
         } else {
-            Crychic::Src("Template/Index");
+            Crychic::Template("Index");
         }
         Crychic::Src("Footer");
     }

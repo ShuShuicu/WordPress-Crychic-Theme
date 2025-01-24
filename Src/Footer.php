@@ -13,7 +13,8 @@ if (!defined('ABSPATH')) exit;
 document.addEventListener('DOMContentLoaded', () => {
     const { createApp, ref } = Vue;
     const { createVuetify } = Vuetify;
-    const { default: ElementPlus } = window.ElementPlus; // 引入 Element Plus
+    const { default: ElementPlus } = window.ElementPlus;
+    const TDesign = window.TDesign;
 
     // 创建 Vuetify 实例
     const vuetify = createVuetify({
@@ -44,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     app.use(vuetify); // 注册 Vuetify
     app.use(ElementPlus); // 注册 Element Plus
-    app.mount('#app');
+    app.use(TDesign); // 注册 TDesign
+
+    app.mount('#app'); // 确保挂载点正确
 });
 </script>
 <?php 

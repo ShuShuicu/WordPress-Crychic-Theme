@@ -6,6 +6,7 @@ function Crychic_CSS() {
         'code/BlackMac',
         'element-plus/index',
         'vuetify/vuetify.min',
+        'tdesign/tdesign.min',
     ];
     foreach ($CssFiles as $css) {
         ?>
@@ -34,8 +35,9 @@ function Crychic_JavaScript() {
         'vue/vue-router.global.min', 
         'vuetify/vuetify.min',
         'element-plus/index.full.min',
+        'tdesign/tdesign.min',
         'code/prism.full',
-        'app.js',
+        'app',
     ];
     foreach ($JsFiles as $js) {
         ?>
