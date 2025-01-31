@@ -148,15 +148,16 @@ class Crychic
         require_once get_theme_file_path() . "/Src/Template/Components/" . $file . ".php";
     }
 
-    // 入口规则
     public static function Mujica()
     {
         Crychic::Src("Header");
         if (is_front_page()) {
             Crychic::Template("Index");
-        } elseif (is_single()) {
+        } elseif (is_single() || is_page()) {
             Crychic::Template("Single");
-        } elseif(is_404()) {
+        } elseif (is_author()) {  
+            Crychic::Template("Author");
+        } elseif (is_404()) {
             Crychic::Template("Error");
         } else {
             Crychic::Template("Index");

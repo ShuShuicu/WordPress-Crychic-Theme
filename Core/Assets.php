@@ -4,9 +4,9 @@ function Crychic_CSS() {
     $CssFiles = [
         'style', 
         'code/BlackMac',
+        'arco/arco.min',
         'element-plus/index',
         'vuetify/vuetify.min',
-        'tdesign/tdesign.min',
     ];
     foreach ($CssFiles as $css) {
         ?>
@@ -19,6 +19,9 @@ function Crychic_HeadJS() {
     $JsFiles = [
         'jquery/jquery.min',
         'jquery/theia-sticky-sidebar.min',
+        'vue/vue.global', 
+        'vue/axios.min',
+        'vue/vue-router.global.min', 
         'view-image.min',
     ];
     foreach ($JsFiles as $js) {
@@ -30,14 +33,10 @@ function Crychic_HeadJS() {
 
 function Crychic_JavaScript() {
     $JsFiles = [
-        'vue/vue.global', 
-        'axios.min',
-        'vue/vue-router.global.min', 
+        'arco/arco-vue.min',
         'vuetify/vuetify.min',
         'element-plus/index.full.min',
-        'tdesign/tdesign.min',
         'code/prism.full',
-        'app',
     ];
     foreach ($JsFiles as $js) {
         ?>

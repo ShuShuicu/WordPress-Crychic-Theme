@@ -1,4 +1,4 @@
-/* body:after {
+body:after {
     content: " ";
     position: fixed;
     inset: 0;
@@ -19,7 +19,7 @@
     to {
         opacity: 0;
     }
-} */
+}
 
 /* body {
     background: url(images/background.webp)
@@ -60,15 +60,20 @@ body .Crychic-container {
     padding-left: 8px;
 }
 
-body .Crychic-typo {
+.Crychic-typo {
     font-size: 17px;
     line-height: 1.5;
     word-wrap: break-word;
 }
 
-body .Crychic-typo img {
+.Crychic-typo img {
     border-radius: 5px;
     max-width: 100%;
+}
+
+.Crychic-Post-List:hover {
+    background-color: #22222210;
+    border-radius: 5px;
 }
 
 #Post .t-card__title {
@@ -78,4 +83,10 @@ body .Crychic-typo img {
 footer {
     display: block;
     unicode-bidi: isolate;
+}
+
+.thumbnail {
+    height: 200px;
+    background-position: center center !important;
+    background-size: cover !important;
 }

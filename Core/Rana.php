@@ -6,10 +6,10 @@ if (!defined('ABSPATH')) exit;
 function Crychic_SEO() {
 ?>
     <title><?php Crychic::Title(true) ?></title>
-    <?php if (is_front_page()) : ?>
+    <?php if (is_front_page()) { ?>
     <meta name="keywords" content="<?php echo esc_attr(Crychic::Options('Crychic_SEO_Key', '',)); ?>">
     <meta name="description" content="<?php echo esc_attr(Crychic::Options('Crychic_SEO_Des', '',)); ?>">
-<?php elseif (is_single()) : ?>
+<?php } elseif (is_single()) { ?>
     <?php
     $tags = get_the_tags();
     $categories = get_the_category();
@@ -30,5 +30,8 @@ function Crychic_SEO() {
     <meta name="keywords" content="<?php echo esc_attr(join(', ', $keywords)); ?>">
     <meta name="description" content="<?php echo esc_attr(get_the_excerpt()); ?>">
 <?php 
-    endif;
+    };
 }
+/**
+ * Crychic Post
+ */

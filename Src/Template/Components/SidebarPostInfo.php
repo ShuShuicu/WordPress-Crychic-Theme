@@ -5,8 +5,7 @@ if (!defined("ABSPATH")) {
 <v-card
         subtitle="<?php the_time("Y-m-d H:i:s"); ?>"
         title="文章信息"
-        elevation="6"
-        style="margin-bottom: 10%;"
+        style="margin-bottom: 10px;"
     >
         <v-card-text>
             <div class="flex gap-2" style="margin-bottom: 8px;">

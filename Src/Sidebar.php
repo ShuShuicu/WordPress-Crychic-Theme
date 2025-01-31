@@ -2,12 +2,14 @@
 if (!defined("ABSPATH")) {
     exit();
 } ?>
-<v-col cols="12" xs="12" sm="12" md="3" lg="3" id="Sidebar">
+<a-col :xs="24" :sm="24" :md="5" :lg="5" :xl="5" :xxl="5" id="Sidebar">
 <?php 
-Crychic::Components('SidebarPostInfo');
+if (is_single()) {
+    Crychic::Components('SidebarPostInfo');
+}
 Crychic::Components('SidebarPostRandom');
 ?>
-</v-col>
+</a-col>
 
 <script>
     jQuery(document).ready(function () {
