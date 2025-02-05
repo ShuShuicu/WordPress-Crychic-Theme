@@ -22,8 +22,8 @@ class Crychic
     // 获取Title
     public function Title($echo = true)
     {
-        $site_name = Crychic::Info("name",false);
-        $site_description = Crychic::Info("description",false);
+        $site_name = Crychic::Info("name", false);
+        $site_description = Crychic::Info("description", false);
         if (is_front_page()) {
             // 首页标题
             if (!empty($site_description)) {
@@ -39,9 +39,9 @@ class Crychic
             // 标签页面标题
             $tag_name = single_tag_title("", false);
             $title = $tag_name . " - " . $site_name;
-        } elseif(is_404()) {
-        // 404页面标题
-            $title = "404 - " . Crychic::Info("name",false);
+        } elseif (is_404()) {
+            // 404页面标题
+            $title = "404 - " . Crychic::Info("name", false);
         } elseif (is_author()) {
             // 作者页面标题
             $author_name = get_the_author();
@@ -131,37 +131,33 @@ class Crychic
         require_once get_theme_file_path() . "/Core/" . $file . ".php";
     }
 
-    // 引用Src文件
-    public static function Src($file)
-    {
-        require_once get_theme_file_path() . "/Src/" . $file . ".php";
-    }
-
-    // 引用Src/Template文件
+    // 引用Template文件
     public static function Template($file)
     {
-        require_once get_theme_file_path() . "/Src/Template/" . $file . ".php";
+        require_once get_theme_file_path() . "/Template/" . $file . ".php";
     }
-    // 引用Src/Template/Components文件
+    // 引用Template/Components文件
     public static function Components($file)
     {
-        require_once get_theme_file_path() . "/Src/Template/Components/" . $file . ".php";
+        require_once get_theme_file_path() . "/Template/Components/" . $file . ".php";
     }
 
     public static function Mujica()
     {
-        Crychic::Src("Header");
+        Crychic::Template("Header");
         if (is_front_page()) {
             Crychic::Template("Index");
         } elseif (is_single() || is_page()) {
             Crychic::Template("Single");
-        } elseif (is_author()) {  
+        } elseif (is_author()) {
             Crychic::Template("Author");
         } elseif (is_404()) {
             Crychic::Template("Error");
         } else {
             Crychic::Template("Index");
         }
-        Crychic::Src("Footer");
+        Crychic::Template("Footer");
     }
 }
+
+require_once 'Functions/seo.php';

@@ -29,8 +29,7 @@ function Crychic_ValidateOptimize($input) {
 }
 
 /**
- * 注册设置字段
- * --------- * 
+ * 注册字段
  * 设置组
  * 保存字段
  * 验证函数
